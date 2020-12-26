@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>WEATHER APP</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+           
+        }
+        body{
+            background-color: rgb(192, 192, 99);
+            display: flex;
+            flex-direction: column;
+            margin-top: 13%;
+            background-color: rgb(13, 209, 183);
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+            
+        }
+        .box{
+          background-color: black;
+          color: wheat;
+        overflow: hidden;
+          
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="wave1"></div>
+        <div class="wave2"></div>
+        <div class="wave3"></div>
+
+
+
+
+        <div id="weathercondition"><i class="far fa-sun"  style="color:yellow"></i> </div>
+            Karachi
+
+            <div class="info">
+                <h2 class="location"><i class="fas fa-street-view"></i> </h2>
+                <p id="date"> WED | OCT |10:49AM</p>
+                <h1 class="temp">26.2c*</h1>
+                <h3 class="tempmin_max">min 23def | max 14gef</h3>
+            </div>
+    </div>
+    
+</body>
+<script>
+    let curDate=document.getElementById('date');
+    let weatjercon=document.getElementById('weathercondition')
+
+    const tempStatus='CLOUDS'
+
+    const getCurrentDay=()=>{
+        var weekDay=new Array(7);
+        weekDay[0]='Sunday';
+        weekDay[1]='Monday';
+        weekDay[2]='Tuesday';
+        weekDay[3]='Wednesday';
+        weekDay[4]='Thursday';
+        weekDay[5]='friday';
+        weekDay[6]='Saturday';
+
+        let currentTime=new Date();
+        console.log(weekDay[currentTime.getDay()])
+    }
+    getCurrentDay()
+
+
+    const getCurrentTime=()=>{
+        var now=new Date()
+        var month=now.getMonth() + 1;
+        var day=now.getDate();
+        console.log(month + '/' +day)
+    };
+    getCurrentTime()
+</script>
+</html>
