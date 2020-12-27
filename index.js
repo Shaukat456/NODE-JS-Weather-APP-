@@ -12,8 +12,9 @@ const replaceVal = (tempValue, orginalValue) => {
     let temperature = tempValue.replace('{%tempval%}', orginalValue.current.temp_c)
  temperature = temperature.replace('{%tempMin%}', orginalValue.current.temp_c)
  temperature = temperature.replace('{%tempMax%}', orginalValue.current.temp_c)
- temperature = temperature.replace('{%location%}', orginalValue.current.temp_c)
- temperature = temperature.replace('{%country%}', orginalValue.current.temp_c)
+ temperature = temperature.replace('{%location%}', orginalValue.location.name)
+ temperature = temperature.replace('{%country%}', orginalValue.location.country)
+ return 
     console.log(temperature)
 }
 
