@@ -8,8 +8,7 @@
     <style>
         *{
             box-sizing: border-box;
-            padding: 0%;
-            margin: 0%;
+            
            
         }
         body{
@@ -27,6 +26,9 @@
           color: wheat;
         overflow: hidden;
           
+        }
+        .fa{
+            height: 200px;
         }
 
         
@@ -55,7 +57,7 @@
 </body>
 <script>
     let curDate=document.getElementById('date');
-    let weatjercon=document.getElementById('weathercondition')
+    let weathercon=document.getElementById('weathercon')
 
     const tempStatus='CLOUDS'
 
@@ -70,19 +72,54 @@
         weekDay[6]='Saturday';
 
         let currentTime=new Date();
-        console.log(weekDay[currentTime.getDay()])
+        let day= weekDay[currentTime.getDay()]
+        // let month1= weekDay[currentTime.getMonth()]
+        
+        return day;
+        // return month1;
+        
     }
-    getCurrentDay()
-
 
 
 
     const getCurrentTime=()=>{
+        var months=[
+            'JAN',
+            'FEB',
+            'MAR',
+            'APR',
+            'MAY',
+            'JUNE',
+            'JULY',
+            'AUG',
+            'SEP',
+            'OCT',
+            'NOV',
+            'DEC',
+        ];
+        
         var now=new Date()
-        var month=now.getMonth() + 1;
-        var day=now.getDate();
-        console.log(month + '/' +day)
+        var month=months[now.getMonth()]
+        var date=now.getDate()
+        
+        let  hours=now.getHours()
+        let mins=now.getMinutes();
+        
+        let periods='AM'
+
+        if(hours >11){
+            period='PM'
+            if(hours>12){
+             hours -= 12
+            }
+        }
+        if(mins<10){
+            mins="0" + mins
+        }
+        // return month
+        return `    ${month}      / ${date}  |  ${hours} :${mins}${periods}`
+        console.log(now)
     };
-    getCurrentTime()
+   curDate.innerHTML= getCurrentDay() +  "|" + getCurrentTime() 
 </script>
 </html>
