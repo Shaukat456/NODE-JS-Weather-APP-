@@ -34,7 +34,6 @@ const server = http.createServer((req, res) => {
             })
             .on('end', function (err) {
                 if (err) return console.log('connection closed due to errors', err);
-
                 console.log('end');
             });
     }
